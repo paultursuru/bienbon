@@ -1,0 +1,7 @@
+<%= simple_form_for(@article) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :url %>
+  <%= f.rich_text_area :content %>
+  <%= f.input :visible, as: :boolean %>
+  <%= f.submit %>
+<% end %>
