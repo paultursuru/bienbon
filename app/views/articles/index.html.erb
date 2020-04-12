@@ -1,11 +1,18 @@
 <% @articles.each do |article|%>
-  <% if article.visible %>
-    <div class="article-card">
-      <%= link_to "#{article.title}", article_path(article), class: "article-title" %>
-      <%= link_to "télécharger", article.url, class: "article-url" %>
+  <% if user_signed_in? %>
+    <div class="article-card <%= article.visible ? "bien-visible" : "bien-invisible" %>">
+      <%= link_to "Bien Bon : #{article.title}", article_path(article), class: "article-title" %>
+      <%= link_to "télécharger", article.url, target: "_blank", class: "article-url" %>
       <% if user_signed_in? %>
         <%= link_to "modifier", edit_article_path(article), class: "article-edit"%>
       <% end %>
     </div>
+  <% else %>
+    <% if article.visible %>
+      <div class="article-card">
+        <%= link_to "#{article.title}", article_path(article), class: "article-title" %>
+        <%= link_to "télécharger", article.url, target: "_blank", class: "article-url" %>
+      </div>
+    <% end %>
   <% end %>
 <% end %>

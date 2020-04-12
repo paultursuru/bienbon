@@ -3,6 +3,6 @@
   <%= f.input :url %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%#= f.rich_text_area :content %>
-  <%= f.input :visible, as: :boolean %>
-  <%= f.submit %>
+  <%= f.input :visible, as: :boolean, checked_value: true, unchecked_value: false %>
+  <%= f.button :submit %>
 <% end %>
