@@ -1,6 +1,7 @@
+<h5>Contribuez</h5>
+<h5>Mode d'emploi</h5>
+<h5><%= link_to "Tous les Bien Bon", articles_path %></h5>
 <% if user_signed_in? %>
-  <%= link_to "nouveau bien bon", new_article_path %>
-  <%= link_to "log out", destroy_user_session_path, method: :delete %>
+  <h5><%= link_to "nouveau bien bon", new_article_path %></h5>
+  <h5><%= link_to "log out", destroy_user_session_path, method: :delete %></h5>
 <% end %>
-<h5>Contribuez-collapse</h5>
-<h5>Mode d'emploi-collapse</h5>

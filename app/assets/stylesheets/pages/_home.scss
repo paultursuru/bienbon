@@ -1,1 +1,35 @@
-// Specific CSS for your home-page
+@font-face {
+  font-family: 'jafjaf';
+  src: font-url('JAF_Herb.ttf') format('truetype')
+}
+
+body {
+  background: #f7c6db;
+  color: #26428c;
+  padding: 50px;
+  h5 {
+    font-family: 'jafjaf' !important;
+    color: #26428c;
+  }
+  a {
+    color: #26428c;
+  }
+  .bienbon-navbar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 0 70px 0;
+  }
+  .bien-bon-page img {
+    padding: 20px 0;
+  }
+  .article-card {
+    display: flex;
+    flex-direction: column;
+    .article-title {
+      font-size: 25px;
+      font-family: "jafjaf";
+      color: #26428c;
+    }
+  }
+}
