@@ -1,10 +1,10 @@
-<h5><%= @article.title %></h5>
+<h5>Bien Bon : <%= @article.title %></h5>
 <%= link_to "télécharger", @article.url , target: "_blank", class: "article-url" %>
 <!-- <div class="article-content"><%#= @article.content %></div>-->
 <% if @article.photos != nil %>
   <% @article.photos.each do |photo| %>
     <div class="bien-bon-page">
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag photo.key, height: 800, width: 1000, crop: :fill %>
     </div>
   <% end %>
 <% end %>

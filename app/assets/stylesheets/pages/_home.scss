@@ -6,7 +6,7 @@
 body {
   background: #f7c6db;
   color: #26428c;
-  padding: 50px;
+  padding: 5% 10%;
   h5 {
     font-family: 'jafjaf' !important;
     color: #26428c;
@@ -22,6 +22,8 @@ body {
   }
   .bien-bon-page img {
     padding: 20px 0;
+    width: 100%;
+    height: auto;
   }
   .article-card {
     display: flex;
@@ -30,6 +32,15 @@ body {
       font-size: 25px;
       font-family: "jafjaf";
       color: #26428c;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  body .bienbon-navbar {
+    padding: 20px 0 50px 0;
+    h5 {
+      font-size: 12px;
     }
   }
 }

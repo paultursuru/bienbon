@@ -10,7 +10,7 @@
   <% else %>
     <% if article.visible %>
       <div class="article-card">
-        <%= link_to "#{article.title}", article_path(article), class: "article-title" %>
+        <%= link_to "Bien Bon : #{article.title}", article_path(article), class: "article-title" %>
         <%= link_to "rectoverso#{article.title}.pdf", article.url, target: "_blank", class: "article-url" %>
       </div>
     <% end %>
