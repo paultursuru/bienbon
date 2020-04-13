@@ -8,8 +8,6 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-require("trix")
-require("@rails/actiontext")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -24,6 +22,8 @@ require("@rails/actiontext")
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
+require("trix")
+require("@rails/actiontext")
 // External imports
 import "bootstrap";
 
@@ -33,4 +33,27 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  const fnmap = {
+    'toggle': 'toggle',
+      'show': 'add',
+      'hide': 'remove'
+  };
+  const collapse = (selector, cmd) => {
+    const targets = Array.from(document.querySelectorAll(selector));
+    targets.forEach(target => {
+      target.classList[fnmap[cmd]]('show');
+    });
+  };
+
+  // Grab all the trigger elements on the page
+  const triggers = Array.from(document.querySelectorAll('[data-toggle="collapse"]'));
+  // Listen for click events, but only on our triggers
+  window.addEventListener('click', (ev) => {
+    const elm = ev.target;
+    if (triggers.includes(elm)) {
+      const selector = elm.getAttribute('data-target');
+      collapse(selector, 'toggle');
+    }
+  }, false);
 });
+// map our commands to the classList methods

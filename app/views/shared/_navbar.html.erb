@@ -1,6 +1,41 @@
 <h5><%= link_to "Tous les Bien Bon", articles_path %></h5>
-<h5>Contribuez</h5>
-<h5>Mode d'emploi</h5>
+  <h5
+    class="btn__first"
+    data-toggle="collapse"
+    data-target=".collapse.first"
+    data-text="Collapse"
+    >
+    Contribuez
+  </h5>
+
+  <h5
+    class="btn__second"
+    data-toggle="collapse"
+    data-target=".collapse.second"
+    data-text="Collapse"
+    >
+    Mode d'emploi
+  </h5>
+
+<div class="collapsable-div">
+  <div class="block collapse first">
+    <div class="block__content">
+      Envoyez vos recettes, textes, images sur chloetournoux@gmail.com
+    </div>
+  </div>
+  <div class="block collapse second">
+    <div class="block__content">
+      <p>Téléchargez le .pdf</p>
+      <p>Imprimez le fichier recto-verso à l'aide de votre imprimante de maison.</p>
+      <p>Si vous n'avez pas l'option recto-verso, faites le manuellement en imprimant d'abord la page 1, puis au dos la page 2, etc...</p>
+      <p>!! Ne pas cocher l'option livret, les pages sont déjà dans le bon ordre !!</p>
+      <p>Ensuite, pliez les pages et reliez à l'aide d'un fil et d'une aiguille.</p>
+    </div>
+  </div>
+</div>
+
+
+
 <% if user_signed_in? %>
   <h5><%= link_to "nouveau bien bon", new_article_path %></h5>
   <h5><%= link_to "log out", destroy_user_session_path, method: :delete %></h5>

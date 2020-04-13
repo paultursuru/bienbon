@@ -19,6 +19,23 @@ body {
     width: 100%;
     justify-content: space-between;
     padding: 0 0 70px 0;
+    flex-wrap: wrap;
+    .btn__first, .btn__second {
+      cursor: pointer;
+    }
+    .collapsable-div {
+      width: 100%;
+      .collapse {
+        margin: 20px 0 0 0;
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height 5s cubic-bezier(0, 1, 0, 1);
+        &.show {
+          max-height: 99em;
+          transition: max-height 5s ease-in-out;
+        }
+      }
+    }
   }
   .bien-bon-page img {
     padding: 20px 0;
