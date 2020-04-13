@@ -33,6 +33,8 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+
+  // map our commands to the classList methods
   const fnmap = {
     'toggle': 'toggle',
       'show': 'add',
@@ -50,10 +52,9 @@ document.addEventListener('turbolinks:load', () => {
   // Listen for click events, but only on our triggers
   window.addEventListener('click', (ev) => {
     const elm = ev.target;
-    if (triggers.includes(elm)) {
+    // if (triggers.includes(elm)) {
       const selector = elm.getAttribute('data-target');
       collapse(selector, 'toggle');
-    }
+    // }
   }, false);
 });
-// map our commands to the classList methods
