@@ -1,4 +1,4 @@
-<h5>Bien Bon : <%= @article.title %></h5>
+<h5><%= @article.title %></h5>
 <%= link_to "télécharger", @article.url , target: "_blank", class: "article-url" %>
 <!-- <div class="article-content"><%#= @article.content %></div>-->
 <% if @article.photos != nil %>
